@@ -28,8 +28,8 @@ class DicaController extends Controller
 
     public function listar(Request $request){
         if(Auth::check()){
-            $dica = Dica::all();
-            return view('admin.dashboard')->with('dica', $dica);
+            $dicas = Dica::all();
+            return view('admin.dashboard')->with('dicas', $dicas);
         }
 
         return redirect("login")->withSuccess('You are not allowed to access');

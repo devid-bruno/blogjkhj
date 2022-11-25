@@ -14,11 +14,7 @@ class PrincipalController extends Controller
     }
 
     public function listar(Request $request){
-        if(Auth::check()){
             $publicacoes = Publication::all();
             return view('card')->with('publicacoes', $publicacoes);
-        }
-
-        return redirect("login")->withSuccess('You are not allowed to access');
     }
 }
